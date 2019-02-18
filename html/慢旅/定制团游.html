@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定制团游</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	body{
+		font-family: '微软雅黑'；
+		background-color:#fdfcfc;
+		/*height: 5000px;*/
+	}
+	.header{
+		width: 100%;
+		height: 76px;
+		border-bottom: 2px solid #e3e5e5;
+		/*overflow: hidden;*/
+
+	}
+	.header .header-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.header .header-c .logo{
+		float: left;
+		height: 47px;
+		width: 107px;
+		background-image: url(img/logo.jpg);
+		margin:19px 0 0 0; 
+	}
+	.header .header-c .nav{
+		position: absolute;
+		right: 0;
+		/*height: 76px;
+		width: 600px;*/
+		float: left;
+
+	}
+	.header .header-c .nav li{
+		float: left;
+		margin: 33px 0 0 80px;
+		padding-bottom: 9px;
+	}
+	.header .header-c .nav a{
+		height: 100%;
+		width: 100%;
+		font-size: 16px;
+		color:#818181; 
+	}
+	.header .header-c .nav li:hover{
+		border-bottom: 2px solid #00daed ;
+		color:#00daed; 
+	}
+	.header .header-c .nav a:hover{
+		color:#00daed; 
+	}
+	
+	.contact{
+		margin-top: 100px;
+		height: 380px;
+		width: 100%;
+		background-color: #f2f2f2;
+	}
+	.contact .contact-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		/*background-color: blue;*/
+		margin: 0px auto;
+	}
+	.contact .contact-c .text{
+		position: absolute;
+	}
+	.contact .contact-c .text .p1{
+		line-height: 100px;
+		font-size: 18px;
+		font-weight: 800;
+	}
+	.contact .contact-c .text .p2{
+		color: #9fa2a2;
+		font-size: 14px;
+		line-height: 32px;
+	}
+	.contact .contact-c .text img{
+		margin: 20px 5px;
+	}
+	.contact .contact-c .contact-form{
+		height: 230px;
+		width: 480px;
+		position: absolute;
+		right: 0px;
+		bottom: 65px;
+	}
+	.contact .contact-c .contact-form ul{
+		height: 100%;
+		width: 100%;
+		color: #bfbdbd;
+		font-size: 14px;
+	}
+	.contact .contact-c .contact-form li{
+		float: left;
+		height: 65px;
+		width: 130px;
+		border-bottom: 1px solid #d4d3d3;
+	}
+	.contact .contact-c .contact-form .l1{
+		margin:0 40px;
+	}
+	.contact .contact-c .contact-form .l2{
+		margin-top: 30px;
+		width: 100%;
+	}
+	.contact .contact-c .contact-form .button{
+		height: 24px;
+		width: 61px;
+		background-color: #474646;
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		text-align: center;
+		line-height: 24px;
+		font-size: 14px;
+	}
+	.contact .contact-c .contact-form .button a{
+		color: #e0e0e0;
+	}
+	.substance{
+		height: 590px;
+		width: 100%;
+	}
+	.substance .substance-c{
+		height: 100%;
+		width: 1200px;
+		margin:0 auto;
+		overflow: hidden;
+	}
+	.substance .substance-c .sub-img{
+		position: relative;
+		float: left;
+		height: 493px;
+		width: 286px;
+		background:url(img/11.jpg)  no-repeat center;
+		margin-left: 18px;
+		margin-top: 98px;
+	}
+	.substance .substance-c .sub-img2{
+		background:url(img/22.jpg)  no-repeat center;
+	}
+	.substance .substance-c .sub-img3{
+		background:url(img/33.jpg)  no-repeat center;
+	}
+	.substance .substance-c .sub-img4{
+		background:url(img/44.jpg)  no-repeat center;
+	}
+	.substance .substance-c .sub-img1{
+		margin-left:0;
+	}
+	.substance .substance-c .sub-img .text{
+		height: 124px;
+		width: 175px;
+		/*background-color: green;*/
+		position: absolute;
+		left:33px;
+		top:124px;
+
+	}
+	.substance .sub-img .text .p1{
+		font-size:20px; 
+		color:#626262;
+		font-weight: 800;
+
+
+	}
+	.substance .sub-img .text .p2{
+		margin-top: 35px;
+		font-size:16px; 
+		color:#4d4c4c;
+		line-height: 35px;
+
+	}
+	.substance .sub-img .text .p3{
+		font-size:16px; 
+		color:#4d4c4c;
+
+	}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header-c">
+			<div class="logo">
+			</div>
+			<ul class="nav">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">特别策划</a></li>
+				<li><a href="#">精品路线</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="substance">
+		<div class="substance-c">
+		    <div class="sub-img sub-img1">
+				<div class="text">
+		    		<p class="p1">点击在线客服</p>
+		    		<p class="p2">索取并填写表单</p>
+		    		<p class="p3">告诉我们您的旅行要求</p>
+		    	</div>
+			</div>
+			<div class="sub-img sub-img2">
+				<div class="text">
+		    		<p class="p1">接听电话回访</p>
+		    		<p class="p2">进一步</p>
+		    		<p class="p3">了解您的需求</p>
+		    	</div>
+			</div>
+			<div class="sub-img sub-img3">
+				<div class="text">
+		    		<p class="p1">制定专属行程</p>
+		    		<p class="p2">产品经理制定方案</p>
+		    		<p class="p3">签订合同，支付定金</p>
+		    	</div>
+			</div>
+			<div class="sub-img sub-img4">
+				<div class="text">
+		    		<p class="p1">享受旅行</p>
+		    		<p class="p2">目的地集合+一条龙服务</p>
+		    		<p class="p3">靠谱又省心</p>
+		    	</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div class="contact">
+		<div class="contact-c">
+			
+			<div class="text">
+				<p class="p1">慢旅Slow Travle工作室 </p>
+				<p class="p2">地点：中国河南省郑州市绿地新都汇</p>
+				<p class="p2">邮编：1000000</p>
+				<p class="p2">电话：0392-23656504</p>
+				<p class="p2">邮箱：manlv@qq.com</p>
+				<p class="p3"><img src="img/qq.jpg"> <img src="img/wx.jpg"><img src="img/wibo.jpg"></p>
+				<p class="p2">OPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</p>
+			</div>
+			<div class="contact-form">
+				<ul>
+					<li>姓名</li>
+					<li class="l1">邮箱</li>
+					<li>电话</li>
+					<li class="l2">内容</li>
+				</ul>
+				<span class="button"><a href="#">提交</a></span>
+
+			</div>
+
+
+
+
+		</div>
+
+	</div>
+
+	
+</body>
+</html>

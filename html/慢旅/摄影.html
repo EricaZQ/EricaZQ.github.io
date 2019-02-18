@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>摄影</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	/*body{
+		height: 5000px;
+	}*/
+	.header{
+		height: 75px;
+		width: 100%;
+		background-color: #000000;
+
+	}
+	.header .header-c{
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+		
+	}
+	.header .header-c .logo{
+		float: left;
+		width: 111px;
+		height: 43px;
+		background: url(img/logo.png) no-repeat center;
+		margin-top: 17px;
+	}
+	.header .header-c .navs{
+		position: absolute;
+		right:0;
+		float: left;
+		height: 100%;
+		width: 556px;
+		/*background-color: gray;*/
+	}
+	.header .header-c .navs li{
+		float: left;
+		margin: 30px 0 0 34px;
+
+	}
+	.header .header-c .navs a{
+		display:block;
+		height: 100%;
+		width: 100%;
+		color: #ffffff;
+		font-size: 16px;
+		padding-bottom: 14px;
+	}
+	.header .header-c .navs a:hover{
+		color: #dd1717;
+		border-bottom:2px solid #dd1717;	
+	}
+	.banner{
+		height: 730px;
+		width: 100%;
+		background-color: #000000;
+	}
+	.banner .banner-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+		background:url(img/sbanner.jpg) no-repeat center;
+	}
+	.banner .banner-c .dotts{
+		position: absolute;
+		bottom: 28px;
+		left: 572px;
+	}
+	.banner .banner-c .dotts li{
+		float: left;
+		margin-left: 14px;
+		height: 7px;
+		width: 7px;
+		border:1px solid #fff;
+		border-radius: 50%;
+
+	}
+	.banner .banner-c .dotts li a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+	.banner .banner-c .dotts li:hover{
+		border-color: #d11e1e;
+	}
+	.content{
+		height: 3000px;
+		width: 100%;
+		background-color: #000000;
+	}
+	.content .content-c{
+		height: 100%;
+		width: 1200px;
+		/*background-color: #000000;*/
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.content .content-c .works{
+		height: 778px;
+		width: 100%;
+		margin-top: 90px;
+		/*background-color: blue;*/
+
+	}
+	.common{
+		position: relative;
+		height: 80px;
+		width: 454px;
+		margin: 0 auto;
+		/*background-color: gray;*/
+		margin-bottom: 32px;
+	}
+	.common .s1{
+		display: block;
+		height: 2px;
+		width: 130px;
+		background-color: #dd1717;
+		margin-top:43px;
+
+	}
+	.common .s2{
+		margin-top: 31px;
+		color: #dd1717;
+		font-size: 16px;
+		font-weight: 800;
+		width: 190px;
+		text-align: center;
+	}
+	/*.common .s3{
+		margin-left: 10px;
+	}*/
+	/*.common .title{
+		height: 100%;
+		width: 100%;
+
+	}*/
+	.common span{
+		float: left;
+	}
+	.common p{
+		position: absolute;
+		bottom: 0;
+		height:23px;
+		width: 100%;
+		text-align: center;
+		font-size: 16px;
+		color: #8c8c8c;
+
+	}
+	.content .content-c .works .list-img{
+		width: 100%;
+		height: 556px;
+		/*background-color:gray;*/
+	}
+	.content .content-c .works .list-img li{
+		height: 249px;
+		width: 359px;
+		margin-right: 61px;
+		margin-bottom: 29px;
+		float: left;
+		/*background-color: gray;*/
+	}
+	.content .content-c .works .list-img .s1{
+		margin-right: 0;
+	}
+	.content .content-c .works .more{
+		height: 100px;
+		width: 100%;
+		text-align: center;
+		background-color: #dd1717;
+		line-height: 100px;
+		margin-top: 10px;
+
+	}
+	.content .content-c .works .more a{
+		color:#ffffff;
+		font-size: 18px;
+		font-weight: 800; 
+	}
+	.content .content-c .welfare{
+		width: 100%;
+		height:1005px;
+		/*background-color: blue;*/
+	}
+	.content .content-c .welfare .list-img{
+		position: relative;
+		width: 100%;
+		height: 875px;
+		margin-top: 50px;
+		/*background-color: #dd1717;*/
+
+	}
+	.content .welfare .list-img .w-img{
+		position: relative;
+		height: 302px;
+		width: 515px;
+		background:url(img/a2.jpg) no-repeat center;
+	}
+	.content .welfare .list-img .w-img2{
+		position: absolute;
+		right: 0;
+		top: 180px;
+
+		
+	}
+	.content .welfare .list-img .w-img3{
+		position: absolute;
+		top: 389px;
+		
+	}
+	.content .welfare .list-img .w-img4{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		border:1px solid #dd1717;
+		border-bottom: 0;
+		
+	}
+	.content .welfare .w-img .text{
+		height: 52px;
+		width: 100%;
+		background-color: #212121;
+		position: absolute;
+		bottom: 0;
+	}
+	.content .welfare .w-img .text4{
+		background-color: #dd1717;
+	}
+
+	.content .welfare .w-img .text .p1{
+		line-height: 52px;
+		color: #888888;
+		font-size: 14px;
+		/*text-indent: 3px;*/
+		margin-left: 16px;
+	}
+	.content .welfare .w-img .text .p2{
+		line-height: 52px;
+		text-align: center;
+		color: #bcbcbc;
+		/*text-indent:20px;*/ 
+		margin-left:153px;
+	}
+	.content .welfare .list-img .yuan{
+		height: 9px;
+		width: 9px;
+		border:1px solid #fff;
+		border-radius: 50%;
+		position: absolute;
+		left: 592px;
+	}
+	.content .welfare .list-img .yuan1{
+		position: absolute;
+		top: 141px;
+		/*background-color: yellow;*/
+	}
+	.content .welfare .list-img .yuan2{
+		position: absolute;
+		top: 326px;
+		/*background-color: yellow;*/
+	}
+	.content .welfare .list-img .yuan3{
+		position: absolute;
+		top: 520px;
+		/*background-color: yellow;*/
+	}
+	.content .welfare .list-img .yuan4{
+		position: absolute;
+		top: 710px;
+		border:1px solid #dd1717;
+		/*background-color: yellow;*/
+	}
+	 .content .about{
+		width: 100%;
+		height: 541px;
+		background:url(img/about.jpg) no-repeat center;
+		margin-top: 95px;
+		overflow: hidden;
+
+	}
+	.content .about .logo{
+		height: 51px;
+		width: 51px;
+		margin: 47px auto;
+
+	}
+	 .content .about .about-c{
+		margin-top: 30px;
+		height: 131px;
+		width: 100%;
+		/*background-color: blue;*/
+
+	}
+	 .content .about .about-c .text{
+		height: 131px;
+		width: 210px;
+		/*background-color: yellow;*/
+		float: left;
+		margin-left: 120px;
+		text-align: center;
+	}
+	.content .about .about-c .text p{
+		text-align: left;
+		color:#ffffff;
+		font-size: 16px;
+		margin-top:22px;
+
+	}
+	.content .about .about-c .text1{
+		margin-left: 0;
+	}
+	.content .about .common2{
+		margin-top: 50px;
+	}
+	.footer{
+		height: 426px;
+		width: 100%;
+		background-color: #000000;
+		/*background-color: blue;*/
+
+	}
+	.footer .footer-c{
+		overflow: hidden;
+		height: 350px;
+		width: 1200px;
+		/*background-color: pink;*/
+		margin: 0 auto;
+	}
+	.footer .copyright{
+		height: 76px;
+		width: 100%;
+		background-color: #161616;
+		text-align: center;
+		color: #6A6A6A;
+		font-size: 12px;
+		line-height: 76px
+	}
+	.footer .footer-c .footer-list{
+		height: 110px;
+		width: 100%;
+		/*background-color: #fff;*/
+		margin: 120px auto;
+
+	}
+	.footer .footer-c .footer-list .footer-text{
+		height: 100%;
+		width: 398px;
+		float: left;
+		border-right: 1px solid gray;
+		color: #8c8c8c;
+		font-size:14px;
+	}
+	.footer .footer-c .footer-list .qq-wx p{
+		margin-top: 30px;
+		font-size: 16px;
+
+	}
+	.footer .footer-c .footer-list .address p{
+		margin-top:15px;
+		text-indent: 85px;
+		/*line-height: 25px;*/
+	}
+	.footer .footer-c .footer-list .contact{
+		border-right:none;
+	}
+	.footer .footer-c .footer-list .contact p{
+		margin-top:15px;
+		text-indent: 216px;
+		/*line-height: 25px;*/
+	}
+	.content .content-c .order{
+		height: 390px;
+		width: 100%;
+		padding-top: 56px;
+		/*background-color: pink;*/
+	}
+	.content .content-c .order .order-c{
+		height: 232px;
+		width: 950px;
+		/*background-color: yellow;*/
+		margin: 90px auto 0;
+	}
+	.content .content-c .order-c .text{
+		float: left;
+		height: 100%;
+		width: 170px;
+		margin-left: 25px;
+		/*background-color: gray;*/
+		position: relative;
+	}
+	.content .content-c .order-c .text1{
+		margin-left: 0;
+	}
+	.content .content-c .order-c span{
+		display: block;
+		height: 76px;
+		width: 59px;
+		margin: 0 auto;
+		background:url(img/shui2.jpg) no-repeat center;
+		font-size: 16px;
+		font-weight: 800;
+		color: #dd1717;
+		line-height: 55px;
+		text-align: center;
+
+	}
+	.content .content-c .order-c .d-img{
+		height: 19px;
+		width: 170px;
+		background:url(img/jiao.jpg) no-repeat center;
+	}
+	.content .content-c .order-c .text-c{
+		height: 137px;
+		width: 168px;
+		position:absolute;
+		bottom: 0;
+		border-right:1px solid #161616;
+		border-bottom:1px solid #161616;
+		border-left:1px solid #161616;
+		/*background-color: green;*/
+	}
+	.content .content-c .text-c .text-p{
+		height: 107px;
+		width: 100%;
+		text-align: center;
+		/*background-color: red;*/
+	}
+	.content .content-c .text-c .text-p .p1{
+		font-size: 16px;
+		color: #ffffff;
+		line-height: 58px;
+	}
+	.content .content-c .text-c .text-p .p2{
+		line-height: 0;
+		font-size: 12px;
+		color: #8c8c8c;
+
+	}
+	.content .content-c .text-c .text-colour{
+		height: 30px;
+		width: 100%;
+		background-color: #000;
+		position: absolute;
+		bottom:0;
+
+	}
+	.content .content-c .order .text:hover span{
+		color: #fff;
+		background:url(img/shui1.jpg) no-repeat center;
+
+	}
+	.content .content-c .order .text:hover .d-img{
+		background:url(img/jiao2.jpg) no-repeat center;
+
+	}
+
+	.content .content-c .order-c .text:hover .text-c{
+		border-right:1px solid #DD1717;
+		border-bottom:1px solid #DD1717;
+		border-left:1px solid #DD1717;
+
+	}
+	.content .content-c .text:hover .text-colour{
+		background-color: #DD1717;
+
+	}
+	.banner .banner-c .jiantou-left{
+		color: #8C8C8C;
+		position: absolute;
+		bottom: 362px;
+	}
+	.banner .banner-c .jiantou-right{
+		color: #8C8C8C;
+		position: absolute;
+		bottom: 362px;
+		right: 0;
+	}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="header-c">
+			<div class="logo">
+	 		</div>
+	 		<div class="navs">
+	 			<ul>
+	 				<li><a href="#">首页</a></li>
+	 				<li><a href="#">样片大赏</a></li>
+	 				<li><a href="#">当季优惠</a></li>
+	 				<li><a href="#">旅拍城市</a></li>
+	 				<li><a href="#">关于我们</a></li>
+	 				<li><a href="#">联系我们</a></li>
+	 			</ul>
+
+	 		</div>
+
+
+		</div>
+	</div>
+	<div class="banner">
+		<div class="banner-c">
+			<a href="#" class="jiantou-left">&lt;&lt;</a>
+			<a href="#" class="jiantou-right">&gt;&gt;</a>
+			<div class="dotts">
+				<ul>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="content">
+		<div class="content-c">
+			<div class="works">
+				<div class="common"> 
+					<span class="s1 s3"></span>
+					<span class="s2">Exhibittion of works</span>
+					<span class="s1"></span>
+					<p>作品展示</p>
+				</div>
+				<div class="list-img">
+					<ul>
+						<li><img src="img/s1.jpg"></li>
+						<li><img src="img/s1.jpg"></li>
+						<li class="s1"><img src="img/s1.jpg"></li>
+						<li><img src="img/s1.jpg"></li>
+						<li><img src="img/s1.jpg"></li>
+						<li class="s1"><img src="img/s1.jpg"></li>
+
+					</ul>
+				</div>
+				<div class="more">
+					<a href="#">VIEW  MORE</a>
+
+				</div>
+			</div>
+			<div class="welfare">
+				<div class="common"> 
+					<span class="s1 s3"></span>
+					<span class="s2">Welfare</span>
+					<span class="s1"></span>
+					<p>优惠福利</p>
+				</div>
+				<div class="list-img">
+					<div class="w-img">
+						<div class="text">
+							<span class="p1">国庆特惠</span>
+							<span class="p2">7288元/套</span>
+						</div>
+					</div>
+					<div class="w-img w-img2">
+						<div class="text">
+							<span class="p1">国庆特惠</span>
+							<span class="p2">7288元/套</span>
+						</div>
+					</div>
+					<div class="w-img w-img3">
+						<div class="text">
+							<span class="p1">国庆特惠</span>
+							<span class="p2">7288元/套</span>
+						</div>
+					</div>
+					<div class="w-img w-img4">
+						<div class="text text4">
+							<span class="p1">国庆特惠</span>
+							<span class="p2">7288元/套</span>
+						</div>
+					</div>
+					<span class="yuan yuan1"></span>
+					<span class="yuan yuan2"></span>
+					<span class="yuan yuan3"></span>
+					<span class="yuan yuan4"></span>
+				</div>
+			</div>
+			<div class="about">
+				<div class="common common2"> 
+					<span class="s1 s3"></span>
+					<span class="s2">About  us</span>
+					<span class="s1"></span>
+					<p>关于我们</p>
+				</div>
+				<div class="logo"><img src="img/logo2.png"></div>
+				<div class="about-c">
+					<div class="text text1">
+						<img src="img/about1.png">
+						<p>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。</p>
+					</div>
+					<div class="text">
+						<img src="img/about2.png">
+						<p>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。</p>
+					</div>
+					<div class="text">
+						<img src="img/about3.png">
+						<p>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。</p>
+					</div>
+					<div class="text">
+						<img src="img/about4.png">
+						<p>2014 年 成 立 于 郑 州，是 郑 州 知 名 一 线 品 牌 旅 拍 摄 影 工 作。</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="order">
+				<div class="common"> 
+					<span class="s1 s3"></span>
+					<span class="s2">Medical  equipment</span>
+					<span class="s1"></span>
+					<p>约拍流程</p>
+				</div>
+				<div class="order-c">
+					<div class="text text1">
+						<span>
+							1
+						</span>
+						<div class="d-img">
+						 	<!-- <img src="img/jiao.jpg"> -->
+						</div>
+						<div class="text-c">
+							<div class="text-p">
+								<p class="p1">前期沟通</p>
+								<p class="p2">确定时间地点及相关事项</p>
+							</div>
+							<div class="text-colour"></div>
+						</div>
+
+					</div>
+					<div class="text text2">
+						<span>
+							2
+						</span>
+						<div class="d-img">
+						 	<!-- <img src="img/jiao.jpg"> -->
+						</div>
+						<div class="text-c">
+							<div class="text-p">
+								<p class="p1">签约拍摄</p>
+								<p class="p2">确定时间地点及相关事项
+								</p>
+							</div>
+							<div class="text-colour"></div>
+						</div>
+
+					</div>
+					<div class="text text3">
+						<span>
+							3
+						</span>
+						<div class="d-img">
+						 	<!-- <img src="img/jiao.jpg"> -->
+						</div>
+						<div class="text-c">
+							<div class="text-p">
+								<p class="p1">拍摄</p>
+								<p class="p2">确定时间地点及相关事项</p>
+							</div>
+							<div class="text-colour"></div>
+						</div>
+
+					</div>
+					<div class="text text4">
+						<span>
+							4
+						</span>
+						<div class="d-img">
+						 	<!-- <img src="img/jiao.jpg"> -->
+						</div>
+						<div class="text-c">
+							<div class="text-p">
+								<p class="p1">选片</p>
+								<p class="p2">确定时间地点及相关事项</p>
+							</div>
+							<div class="text-colour"></div>
+						</div>
+
+					</div>
+					<div class="text text5">
+						<span>
+							5
+						</span>
+						<div class="d-img">
+						 	<!-- <img src="img/jiao.jpg"> -->
+						</div>
+						<div class="text-c">
+							<div class="text-p">
+								<p class="p1">精修返图</p>
+								<p class="p2">确定时间地点及相关事项</p>
+							</div>
+							<div class="text-colour"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-c">
+			<div class="footer-list">
+				<div class="footer-text qq-wx">
+				 <p>郑州镜界摄影服务工作室</p>
+				 <a href="#"><img src="img/wb.png"></a>
+				 <a href="#"><img src="img/qq.png"></a>
+				 <a href="#"><img src="img/wx.png"></a>
+				 <a href="#"><img src="img/bd.png"></a>
+				</div>
+				<div class="footer-text address">
+					<p>地址：郑州市郑东新区绿地中心6号楼</p>
+					<p>服务热线：037-7981788</p>
+					<p>邮编：456333</p>
+				</div>
+				<div class="footer-text contact">
+					<p>手机：18236988754</p>
+					<p>邮箱：912754544@qq.com </p>
+					<p>QQ：912754544</p>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+		Copyright ©2010 ls1001.com, All rights reserved. 镜界传媒艺术有限公司 豫IC
+		</div>
+	</div>	
+</body>
+</html>

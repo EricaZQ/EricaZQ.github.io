@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		text-decoration: none;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	body{
+		font-family: '微软雅黑'；
+		background-color:#fdfcfc;
+		/*height: 5000px;*/
+	}
+	.header{
+		width: 100%;
+		height: 76px;
+		/*overflow: hidden;*/
+
+	}
+	.header .header-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.header .header-c .logo{
+		float: left;
+		height: 47px;
+		width: 107px;
+		background-image: url(img/logo.jpg);
+		margin:19px 0 0 66px; 
+	}
+	.header .header-c .nav{
+		position: absolute;
+		right: 0;
+		/*height: 76px;
+		width: 600px;*/
+		float: left;
+
+	}
+	.header .header-c .nav li{
+		float: left;
+		margin: 33px 0 0 80px;
+		padding-bottom: 9px;
+	}
+	.header .header-c .nav a{
+		height: 100%;
+		width: 100%;
+		font-size: 16px;
+		color:#818181; 
+	}
+	.header .header-c .nav li:hover{
+		border-bottom: 2px solid #00daed ;
+		color:#00daed; 
+	}
+	.header .header-c .nav a:hover{
+		color:#00daed; 
+	}
+	.banner{
+		height: 624px;
+		width: 100%;
+		background-color:#8fb5d9;
+		
+
+	}
+	.banner .banner-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		background:url(img/banner11.jpg) no-repeat center;
+		margin: 0 auto;
+	}
+
+	.dotts{
+		position: absolute;
+		right: 553px;
+		bottom: 33px;
+		height: 10px;
+		/*background-color: green;*/
+	}
+	.dotts li{
+		float: left;
+		width: 10px;
+		height: 10px;
+		margin-right: 18px;
+		border: 1px solid #fff;
+			/*css3属性 */
+		border-radius: 50%;
+	}
+	.dotts li a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-color: rgba(0,0,0,.5);
+	}
+	.dotts li:hover{
+		border-color: #fff;
+	}
+	.dotts li:hover a{
+		background-color:#fff;
+	}
+	.content{
+		margin-top: 100px;
+		width: 100%;
+	}
+	.content .content-c{
+		position: relative;
+		width: 1200px;
+		height: 100%;
+		margin: 0 auto;
+	}
+
+	.content .content-c .plan{
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: 358px;
+	}
+
+	.common .kuai{
+		z-index: 999;
+		position: absolute;
+		left: -24px;
+		margin-top: 3px;
+		height: 13px;
+		width: 52px;
+		background-color: #04e4f8;
+	}
+	.common .cname{
+		display: block;
+		position: absolute;
+		top: -5px;
+		color: #3b3b3b;
+		font-size: 24px;
+		z-index: 99999;
+		font-weight: 800;
+
+	}
+	.common .ename{
+		display: block;
+		position: absolute;
+		top: 32px;
+		font-size: 14px;
+		color: #c7c7c7;
+		z-index: 99;
+	}
+	.content .content-c .plan .plan-c{
+		overflow: hidden;
+		position: relative;
+		margin-top: 85px;
+	}
+	.content .content-c .plan .plan-c img{
+		float: left;
+	}
+	.content .content-c .plan-c .script{
+		float: left;
+		margin-top: 63px; 
+		height: 167px;
+		width: 818px;
+		background-color: #fbfbfb;
+		text-align: center;
+		
+		
+	}
+
+
+	.content .content-c .script .p1{
+		color: #404040;
+		font-weight: 800;
+		font-size: 22px;
+		line-height: 38px;
+		margin-top: 38px;
+
+	}
+	.content .content-c .script .p2{
+		color: #515254;
+		font-size: 14px;
+		line-height: 35px;
+
+	}
+
+	.route .route-c .c-more,
+	.content .content-c .c-more{
+		display: block;
+		height: 64px;
+		width: 390px;
+		border: 2px solid #f2f2f2;
+		margin: 68px auto;
+		text-align: center;
+		line-height: 64px;
+		color: #807e7e;
+		font-size: 16px;
+
+
+	}
+	.c-about{
+		margin-bottom: 101px;
+		position: relative;
+		height: 296px;
+		width: 100%;
+		background-color: #fbfbfb;
+		/*margin-top: 99px;*/
+		overflow: hidden;
+	}
+	.c-about .about-center{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+
+	}
+	.c-about .about-center .about-text{
+		position: relative;
+		height:160px;
+		width: 300px;
+		margin-top:66px;
+
+	}
+	.c-about .about-center .bg-img{
+		background:url(img/bg.jpg) no-repeat center;
+		height: 296px;
+		width: 725px;
+		position: absolute;
+		top: -66px;
+		left: -300px;
+	}
+	.c-about .about-center .common .p1{
+		color: #fff;
+
+	}
+	.c-about .about-center .common .p2{
+		color: #838080;
+
+	}
+	.c-about .about-center .about-text .text{
+		position: absolute;
+		left: 600px;
+		height: 160px;
+		width: 600px;
+	}
+	.c-about  .text  .text2 .p1,
+	.c-about  .text  .text1 .p1{
+		font-size: 18px;
+		color: #373737;
+		font-weight: 800;
+
+	}
+	.c-about  .text  .text2 .p2,
+	.c-about  .text  .text1 .p2{
+		font-size: 12px;
+		color: #494949;
+
+	}
+	.c-about  .text  .text1 .p3{
+		padding-left: 18px;
+		height:38px;
+		width: 406px;
+		font-size: 14px;
+		color: #494949;
+		position: absolute;
+		right: 95px;
+		top: 0;
+		border-left: 1px solid #494949;
+	}
+	.c-about  .text  .text2{
+		position: absolute;
+		bottom: 0;
+	}
+	.c-about  .text  .text2 .p3{
+		padding-left: 18px;
+		height:38px;
+		width: 406px;
+		font-size: 14px;
+		color: #494949;
+		position: absolute;
+		right: -452px;
+		top: 4px;
+		border-left: 1px solid #494949;
+	}
+	.route{
+		width: 100%;
+		height: 735px;
+		/*background-color: yellow;*/
+	}
+	.route .route-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		margin: 0 auto;
+		/*background-color: blue;*/
+	}
+	.route .route-c img{
+		margin-top: 104px;
+	}
+	.customize{
+		height: 338px;
+		width: 100%;
+		background-color: #335561;
+
+	}
+	.customize .customize-c{
+		width: 1200px;
+		height: 100%;
+		margin: 110px auto;
+		background: url(img/dingzhi.jpg) no-repeat center;
+	}
+	.customize .customize-c .c-left,
+	.customize .customize-c .c-right{
+		height: 100%;
+		width: 50%;
+		text-align: center;
+		float: left;
+	}
+	/*.customize .customize-c .c-left{
+		background-color: yellow;
+	}
+	.customize .customize-c .c-right{
+		background-color: blue;
+	}*/
+	.customize .customize-c .c-left a{
+		display: block;
+		height: 45px;
+		width: 146px;
+		border: 2px solid #a5a5a9;
+		/*background-color: #04e4f8;*/
+		margin: 102px auto 0;
+		line-height: 45px;
+		color: #f1f2f3;
+		font-size:20px;
+		font-weight:800;
+	}
+	.customize .customize-c .c-left a:hover{
+		background-color: #04e4f8;
+		border:none;
+		height: 49px;
+		width: 150px;
+
+	}
+	.customize .customize-c .c-left .p1{
+		color: #bdbaba;
+		font-size: 22px;
+		line-height: 40px;
+
+	}
+	.customize .customize-c .c-left .p2{
+		color: #bdbaba;
+		font-size: 12px;
+		line-height: 20px;
+
+	}
+	.customize .customize-c .c-left .xian{
+		width: 30px;
+		height: 2px;
+		background-color: #9ea1a3;
+		margin: 11px auto;
+
+	}
+	.contact{
+		height: 380px;
+		width: 100%;
+		/*background-color: yellow;*/
+	}
+	.contact .contact-c{
+		position: relative;
+		height: 100%;
+		width: 1200px;
+		/*background-color: blue;*/
+		margin: 100px auto;
+	}
+	.contact .contact-c .text{
+		position: absolute;
+		top: 70px;
+	}
+	.contact .contact-c .text .p1{
+		line-height: 100px;
+		font-size: 18px;
+		font-weight: 800;
+	}
+	.contact .contact-c .text .p2{
+		color: #9fa2a2;
+		font-size: 14px;
+		line-height: 32px;
+	}
+	.contact .contact-c .text img{
+		margin: 20px 5px;
+	}
+	.contact .contact-c .contact-form{
+		height: 230px;
+		width: 480px;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+	}
+	.contact .contact-c .contact-form ul{
+		height: 100%;
+		width: 100%;
+		color: #bfbdbd;
+		font-size: 14px;
+	}
+	.contact .contact-c .contact-form li{
+		float: left;
+		height: 65px;
+		width: 130px;
+		border-bottom: 1px solid #d4d3d3;
+	}
+	.contact .contact-c .contact-form .l1{
+		margin:0 40px;
+	}
+	.contact .contact-c .contact-form .l2{
+		margin-top: 30px;
+		width: 100%;
+	}
+	.contact .contact-c .contact-form .button{
+		height: 24px;
+		width: 61px;
+		background-color: #474646;
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		text-align: center;
+		line-height: 24px;
+		font-size: 14px;
+	}
+	.contact .contact-c .contact-form .button a{
+		color: #e0e0e0;
+	}
+
+	
+	</style>
+	</head>
+<body>
+	<div class="header">
+		<div class="header-c">
+			<div class="logo">
+			</div>
+			<ul class="nav">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">特别策划</a></li>
+				<li><a href="#">精品路线</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="banner-c">
+
+
+			<ul class="dotts">
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="content-c">
+			<div class="plan">
+				<div class="common">
+					<span class="kuai">
+					</span>
+					<span class="cname">
+						特别策划
+					</span>
+					<span class="ename" >
+						ACTIVITY ROUTR
+					</span>
+				</div>
+				<div class="plan-c">
+					<img src="img/plan.jpg" alt="">
+					<div class="script">
+						<p class="p1">苍山洱海旁，过一段慢时光</p>
+						<p class="p2">云南风花雪月之旅 （6days）</p>
+						<p class="p2">洱海骑行    手作扎染    泸沽湖划船    草海    束河古镇    拉市海</p>
+					</div>
+				</div>
+			</div>
+			<div class="plan">
+				<div class="plan-c">
+					<div class="script">
+						<p class="p1">苍山洱海旁，过一段慢时光</p>
+						<p class="p2">云南风花雪月之旅 （6days）</p>
+						<p class="p2">洱海骑行    手作扎染    泸沽湖划船    草海    束河古镇    拉市海</p>
+					</div>
+					<img src="img/plan2.jpg" alt="">
+				</div>
+			</div>
+			<div class="plan">
+				<div class="plan-c">
+				<img src="img/plan3.jpg" alt="">
+					<div class="script">
+						<p class="p1">苍山洱海旁，过一段慢时光</p>
+						<p class="p2">云南风花雪月之旅 （6days）</p>
+						<p class="p2">洱海骑行    手作扎染    泸沽湖划船    草海    束河古镇    拉市海</p>
+					</div>	
+				</div>
+			</div>
+			<a href="#" class="c-more">
+				MORE
+			</a>
+		</div>
+	</div>
+	<div class="c-about">
+		<div class="about-center">
+			<div class="about-text">
+				<div class="common">
+					<span class="kuai">
+					</span>
+					<span class="cname p1">
+						关于我们
+					</span>
+					<span class="ename p2" >
+						ABOUT US
+					</span>
+				</div>
+				<div class="text">
+					<div class="text1">
+						<p class="p1">介绍</p>
+						<p class="p2">Introduce</p>
+						<p class="p3">新旅行概念社区，在这里，你可以收货来自世界各地的友谊，为您
+提供省心、省钱、纯玩、有趣的路线随时带您出发看世界。 </p>
+
+					</div>
+					<div class="text2">
+						<p class="p1">理念</p>
+						<p class="p2">Concept</p>
+						<p class="p3">每一寸土地都承载着一个城市厚重而亲切的灵魂。
+                  		<br>About travel, about life, That's all. </p>
+
+					</div>
+				</div>
+			</div>
+			<div class="bg-img">
+			</div>
+		</div>
+	</div>
+	<div class="route">
+		<div class="route-c">
+			<div class="common">
+					<span class="kuai">
+					</span>
+					<span class="cname">
+						精品路线
+					</span>
+					<span class="ename" >
+						CLASSICS ROUTR
+					</span>
+			</div>
+			<img src="img/roude.jpg">
+			<a href="#" class="c-more">
+				MORE
+			</a>
+
+		</div>
+
+	</div>
+	<div class="customize">
+		<div class="customize-c">
+			<div class="c-left">
+				<a href="#">定制团体游</a>
+				<p class="p1">独立成团    专属定制</p>
+				<p class="p2">简单几步，定制您的私人旅行</p>
+				<div class="xian">
+				</div>
+			
+
+			</div>
+			<div class="c-right c-left">
+				<a href="#">领队自由行</a>
+					<p class="p1">金牌领队    专业跟拍</p>
+					<p class="p2">解锁陌生，升级地道旅游体验</p>
+					<div class="xian">
+					</div>
+			
+
+			</div>
+
+		</div>
+
+	</div>
+	<div class="contact">
+		<div class="contact-c">
+			<div class="common">
+				<span class="kuai">
+				</span>
+				<span class="cname">
+					联系我们
+				</span>
+				<span class="ename" >
+					CONTACT
+				</span>
+			</div>
+			<div class="text">
+				<p class="p1">慢旅Slow Travle工作室 </p>
+				<p class="p2">地点：中国河南省郑州市绿地新都汇</p>
+				<p class="p2">邮编：1000000</p>
+				<p class="p2">电话：0392-23656504</p>
+				<p class="p2">邮箱：manlv@qq.com</p>
+				<p class="p3"><img src="img/qq.jpg"> <img src="img/wx.jpg"><img src="img/wibo.jpg"></p>
+				<p class="p2">OPYRIGHT (©) 2018 mo004_2551 - 生活方式旅游类网站.</p>
+			</div>
+			<div class="contact-form">
+				<ul>
+					<li>姓名</li>
+					<li class="l1">邮箱</li>
+					<li>电话</li>
+					<li class="l2">内容</li>
+				</ul>
+				<span class="button"><a href="#">提交</a></span>
+
+			</div>
+
+
+
+
+		</div>
+
+	</div>
+</body>
+</html>
