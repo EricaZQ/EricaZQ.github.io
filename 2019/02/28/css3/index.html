@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="css3css私有化前缀 因为css3出现后 浏览器并不能统一所有针对新属性 不同的浏览器需要添加不同的前缀使其生效.(但是现在好像不太需要)  webkit chrome浏览器内核 moz  火狐 ms ie内核 o 欧朋浏览器 12345//圆角，radius半径-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3">
+<meta property="og:url" content="http://yoursite.com/2019/02/28/css3/index.html">
+<meta property="og:site_name" content="前端小设计">
+<meta property="og:description" content="css3css私有化前缀 因为css3出现后 浏览器并不能统一所有针对新属性 不同的浏览器需要添加不同的前缀使其生效.(但是现在好像不太需要)  webkit chrome浏览器内核 moz  火狐 ms ie内核 o 欧朋浏览器 12345//圆角，radius半径-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-28T07:20:19.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3">
+<meta name="twitter:description" content="css3css私有化前缀 因为css3出现后 浏览器并不能统一所有针对新属性 不同的浏览器需要添加不同的前缀使其生效.(但是现在好像不太需要)  webkit chrome浏览器内核 moz  火狐 ms ie内核 o 欧朋浏览器 12345//圆角，radius半径-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/28/css3/">
+
+
+
+
+
+  <title>css3 | 前端小设计</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端小设计</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/css3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erica">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端小设计">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T15:21:20+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h1><h2 id="css私有化前缀"><a href="#css私有化前缀" class="headerlink" title="css私有化前缀"></a>css私有化前缀</h2><ul>
+<li><p>因为css3出现后 浏览器并不能统一所有针对新属性 不同的浏览器需要添加不同的前缀使其生效.(但是现在好像不太需要)</p>
+<ul>
+<li>webkit chrome浏览器内核</li>
+<li>moz  火狐</li>
+<li>ms ie内核</li>
+<li><p>o 欧朋浏览器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//圆角，radius半径</span><br><span class="line">-webkit-border-radius: 4px;</span><br><span class="line">-moz-border-radius: 4px;</span><br><span class="line">-ms-border-radius: 4px;</span><br><span class="line">-o-border-radius: 4px;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>半个椭圆写法，百度可以查到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 50% / 100% 100% 0 0;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="css3新增选择器"><a href="#css3新增选择器" class="headerlink" title="css3新增选择器"></a>css3新增选择器</h2><ul>
+<li><p>属性选择器</p>
+<ul>
+<li>其特点是通过属性来选择元素，具体有以下5种形式</li>
+<li>div[attr]</li>
+<li>div[attr=mydemo]</li>
+<li>div[attr*=mydemo]   //任意位置</li>
+<li>div[attr^=mydemo]  //开始位置</li>
+<li>div[attr$=demos]  //结束位置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	/*可以选中具有title属性的p1*/</span><br><span class="line">	/*属性选择器是补充作用,一般用[]*/</span><br><span class="line">	.p1[title=&quot;p-1&quot;]&#123;</span><br><span class="line">		color: blue;</span><br><span class="line">	&#125;</span><br><span class="line">	.p1[title]&#123;</span><br><span class="line">		font-size: 30px;</span><br><span class="line">	&#125;</span><br><span class="line">	/*title以p开始的属性*/</span><br><span class="line">	.p1[title^=&quot;p&quot;]&#123;</span><br><span class="line">		background-color: yellow;</span><br><span class="line">	&#125;</span><br><span class="line">	/*属性选择器 在表单用的多一点*/</span><br><span class="line">	input[name=&quot;age&quot;]&#123;</span><br><span class="line">		color: red;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">   &lt;body&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot; title=&quot;p-1&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot; title=&quot;p-2&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</span><br><span class="line">       &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;</span><br><span class="line">   &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>伪类选择器</p>
+<ul>
+<li><p>结构伪类</p>
+<ul>
+<li>重点通过E来确定元素的父元素。</li>
+<li>E:first-child第一个子元素</li>
+<li>E:last-child最后一个子元素</li>
+<li>E:nth-child(n) 第n个子元素</li>
+<li>E:nth-last-child(n) 同E:nth-child(n) 相似，只是倒着计算；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//n是支持简单表达式的</span><br><span class="line">li:nth-child(2n-1)&#123;</span><br><span class="line">color: red;</span><br><span class="line">&#125;</span><br><span class="line">//n&lt;0时无效</span><br><span class="line">//选中所有的4 的倍数的li </span><br><span class="line">li:nth-child(4n)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">    &#125;</span><br><span class="line">//选中前面五个</span><br><span class="line">li:nth-child(-1n+5)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">    &#125;</span><br><span class="line">//选中后面五个</span><br><span class="line">li:nth-last-child(-1n+5)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">//所有的偶数</span><br><span class="line">li:nth-child(even)&#123;</span><br><span class="line">    color:red</span><br><span class="line">&#125;</span><br><span class="line">//所有的奇数</span><br><span class="line">li:nth-child(odd)&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br><span class="line">//n可是多种形式：nth-child(2n)、nth-child(2n+1)、nth-child(-1n+5)等；</span><br><span class="line">//E:empty 选中没有任何子节点的E元素；注意，无法选择有空格或者回撤的标签</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>目标伪类</p>
+<ul>
+<li>E:target 结合锚点进行使用，处于当前锚点的元素会被选中；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#li3&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">&lt;li id=&quot;li3&quot;&gt;li3&lt;/li&gt;</span><br><span class="line">li:target&#123;</span><br><span class="line">        font-size: 30px;</span><br><span class="line">        color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>伪元素（伪标签）选择器</p>
+<ul>
+<li>是一个行内元素，需要转换成块元素</li>
+<li>E:after、E:before 在旧版本里是伪类，在新版本里是伪元素，新版本E:after、E:before会被自动识别为E::after、E::before，按伪元素来对待，这样做的目的是用来做兼容处理。</li>
+<li>伪标签 在js中不能被选中</li>
+<li>E::first-letter文本的第一个字母或字；</li>
+<li>E::first-line 文本第一行；  文本第一行高亮..</li>
+<li>E::selection 可改变选中文本的样式；</li>
+<li><code>content`</code>伪元素多的属性可以用来添加内容，但是鼠标光标不能选中</li>
+<li><p>用于清除浮动,在这个元素after写上<code>clear:both;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.clear::after&#123;</span><br><span class="line">    content:&apos;&apos;;</span><br><span class="line">    /*转换为块状元素*/</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">    height:0;</span><br><span class="line">    overflow:hidden;</span><br><span class="line">    visibility:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>僚机，这个元素的after和before，可以加样式和动画。</p>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2></li>
+</ul>
+</li>
+<li>一种新增的颜色表达方式</li>
+<li>Red、Green、Blue、Alpha（透明度）即RGBA</li>
+<li>Hue（色调）、Saturation（饱和度）、Lightness（亮度）、Alpha（透明度）即HSLA</li>
+<li>关于透明度<ul>
+<li>opacity只能针对整个盒子设置透明度，子盒子及内容会继承父盒子的透明度；</li>
+<li>transparent 不可调节透明度，始终完全透明；</li>
+<li>什么时候用<ul>
+<li>一般元素透明用opacity</li>
+<li>遮罩层rgba背景透明</li>
+<li>制作三角的时候用transparent</li>
+</ul>
+</li>
+<li>制作三角形:写一个元素给他加上很宽的边框，然后让元素的长宽为0，就只剩边框了，让其中三个边框变透明就成了三角形了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  .an&#123;</span><br><span class="line">      width: 0px;</span><br><span class="line">      height: 0px;</span><br><span class="line">      /*background-color: pink;*/</span><br><span class="line">      margin: 100px;</span><br><span class="line">      border: 90px solid transparent;</span><br><span class="line">      /*border-right-color: green;*/</span><br><span class="line">      border-bottom-color: yellow;</span><br><span class="line">      /*border-left-color: purple;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><ul>
+<li><p>文本：text-shadow，可分别设置偏移量、模糊度、颜色（可设透明度）。</p>
+<ul>
+<li>水平偏移量 正值向右 负值向左；</li>
+<li>垂直偏移量 正值向下 负值向上；</li>
+<li>模糊度是不能为负值；</li>
+<li>可以有多个影子，用逗号隔开</li>
+<li>案例：浮雕文字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.tu&#123;</span><br><span class="line">  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;</span><br><span class="line">&#125;</span><br><span class="line">.ao&#123;</span><br><span class="line">    text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>盒子：box-shadow</p>
+<ul>
+<li>blur： 模糊半径</li>
+<li>spread:  扩展范围</li>
+<li>color: 颜色</li>
+<li>案例：扔在桌子上的图片<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    margin-left: 100px;</span><br><span class="line">    border: 30px solid #e5e5e5;</span><br><span class="line">    transform: rotate(30deg);</span><br><span class="line">    box-shadow: 0 40px 30px -20px rgba(0,0,0,.5);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;img class=&quot;pic&quot; src=&quot;m1.jpg&quot; alt=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>用box-sizing 来指定盒模型，他有两个属性，content-box、border-box。</li>
+<li>content-box:对象的实际宽度等于设置的width值和border、padding之和</li>
+<li>border-box： 对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element width = width ) 。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/28/html5/" rel="next" title="html5">
+                <i class="fa fa-chevron-left"></i> html5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Erica</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css3"><span class="nav-number">1.</span> <span class="nav-text">css3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#css私有化前缀"><span class="nav-number">1.1.</span> <span class="nav-text">css私有化前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css3新增选择器"><span class="nav-number">1.2.</span> <span class="nav-text">css3新增选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色"><span class="nav-number">1.3.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阴影"><span class="nav-number">1.4.</span> <span class="nav-text">阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型"><span class="nav-number">1.5.</span> <span class="nav-text">盒子模型</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erica</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

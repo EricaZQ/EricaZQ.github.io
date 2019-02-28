@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="前端小设计">
 <meta property="og:description" content="BOMjs组成 javascript ECMAScript 基础语法,包括变量声明,数组,对象,函数,循环等.   dom document object model , 文档对象模型. 包括了操作文档对象(html对象)的所有标签的增删改查的api.   bom browser object  model ,浏览器对象模型. 包括定时器,浏览器滚动监听,浏览器宽高,元素边框等.bom   三大家">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-21T07:43:52.728Z">
+<meta property="og:updated_time" content="2019-02-28T03:33:38.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bom">
 <meta name="twitter:description" content="BOMjs组成 javascript ECMAScript 基础语法,包括变量声明,数组,对象,函数,循环等.   dom document object model , 文档对象模型. 包括了操作文档对象(html对象)的所有标签的增删改查的api.   bom browser object  model ,浏览器对象模型. 包括定时器,浏览器滚动监听,浏览器宽高,元素边框等.bom   三大家">
@@ -319,14 +319,14 @@
 </li>
 <li>offset这个单词本身是偏移，位移的意思。</li>
 <li>在js中是为了方便获取元素尺寸。</li>
-<li><p>offsetWidth和ffsetHeight</p>
+<li><p><code>offsetWidth和ffsetHeight</code></p>
 <ul>
 <li>检测盒子自身宽高，包括边框和padding</li>
 <li>得到的结果是number类型，可以直接参与运算<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">console.log(&apos;d1.offsetWidth===&gt;&apos;,d1.offsetWidth);</span><br><span class="line">console.log(&apos;d1.offsetHeight===&gt;&apos;,d1.offsetHeight);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>offsetLeft和offsetTop</p>
+<li><p><code>offsetLeft和offsetTop</code></p>
 <ul>
 <li>检测距离父盒子有定位的左/上的距离。</li>
 <li>如果父类没有定位，就一直往上找，找到有定位的父类元素为止。如果所有的父类都没有定位。那么指的是距离body边框的距离</li>
@@ -334,7 +334,7 @@
 </li>
 </ul>
 </li>
-<li><p>offsetParent</p>
+<li><p><code>offsetParent</code></p>
 <ul>
 <li>检测父系盒子中带有定位的父盒子节点</li>
 <li>如果父类没有定位，就一直往上找，找到有定位的父类元素为止。如果所有的父类都没有定位。那么offsetParent为body。</li>
@@ -350,6 +350,132 @@
 <li>style获取的结果是css样式,单位带px,而offsetwidth获取的是number类型</li>
 <li>offsetWidth 只能获取整数值</li>
 <li>通过对象修改属性<code>this.style.width = &#39;400px&#39;;</code>这是给这个节点加上行内样式，将他的css覆盖掉了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">console.log(d1.style.width);</span><br><span class="line">console.log(d1.offsetWidth);</span><br><span class="line">d1.onclick = function()&#123;</span><br><span class="line">    //通过对象修改属性</span><br><span class="line">    this.style.width = &apos;400px&apos;;</span><br><span class="line">    // offsetWidth 是只读属性 只能获取不能设值</span><br><span class="line">    this.offsetWidth  = 400;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="scroll家族"><a href="#scroll家族" class="headerlink" title="scroll家族"></a>scroll家族</h2><ul>
+<li><code>scrollWidth</code>和<code>scroHeight</code><ul>
+<li>检测盒子的宽高。（调用者：节点元素。属性。）</li>
+<li>盒子内容的宽高。（如果有内容超出了，显示内容的高度）</li>
+<li>和offset不同，scroll不包含border，但是包含padding。</li>
+</ul>
+</li>
+<li><p><code>scrollTop</code>和<code>scrollLeft</code></p>
+<ul>
+<li>网页，被浏览器遮挡的头部和左边部分。</li>
+<li>被卷去的头部和左边部分。</li>
+</ul>
+</li>
+<li><p>页面被卷进去的高度</p>
+<ul>
+<li><p><code>document.documentElement.scrollTop</code>已经声明DTD（IE678只认识他）</p>
+<ul>
+<li><code>Element.scrollTop</code> 属性可以获取或设置一个元素的内容垂直滚动的像素数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop =intvalue</span><br><span class="line">window.scrollTo(x,y);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>window.pageYOffset</code>火狐/谷歌/ie9+以上支持的</p>
+</li>
+</ul>
+</li>
+<li><p>监听浏览器的滚动事件，实时监听页面滚进去的高度,只要页面滚动无论向左向右，向上向下，哪怕只有1px，都会触动这个事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      window.onscroll = function()&#123;</span><br><span class="line">	console.log(document.documentElement.scrollTop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>骨架标签</p>
+<ul>
+<li>document.title — 文档标题；</li>
+<li>document.head — 文档的头标签</li>
+<li>document.body — 文档的body标签；</li>
+<li>document.documentElement — html<h2 id="event事件"><a href="#event事件" class="headerlink" title="event事件"></a>event事件</h2></li>
+</ul>
+</li>
+<li><p>事件对象（event）</p>
+<ul>
+<li>在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。所有浏览器都支持event对象，但支持的方式不同。比如鼠标操作时候，会添加鼠标位置的相关信息到事件对象中。</li>
+<li>普通浏览器支持 event（带参，任意参数）</li>
+<li>ie 678 支持 window.event（无参，内置）</li>
+<li>总结：他是一个事件中的内置对象。内部装了很多关于鼠标和事件本身的信息。</li>
+</ul>
+</li>
+<li><p>事件对象的获取（event的获取）</p>
+<ul>
+<li>IE678中，window.event </li>
+<li>在火狐谷歌中，event或者，在事件绑定的函数中，加参，这个参数就是event.</li>
+<li>兼容方式  <code>var event = event||window.event;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  //ie8</span><br><span class="line">  d1.onclick = function()&#123;</span><br><span class="line">      var event = window.event;</span><br><span class="line">      alert(document.documentElement.scrollTop+event.clientY);</span><br><span class="line">  &#125;</span><br><span class="line">  //高级浏览器</span><br><span class="line">  //e就是event对象</span><br><span class="line">d1.onclick = function(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">	console.log(&apos;clientY&apos;,e.clientY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>event属性</p>
+<ul>
+<li>screenX/Y:鼠标位于屏幕的上方和左侧的距离。（屏幕）</li>
+<li>pageX/Y:鼠标位于整个网页页面的顶部和左侧部分的距离。（页面）</li>
+<li><p>clientX/Y:鼠标位于浏览器的左侧和顶部的距离。（浏览器大小和位置）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">//e就是event对象</span><br><span class="line">d1.onclick = function(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">	// page指的是页面本身</span><br><span class="line">	// client指的是浏览器客户端(不包含top的工具栏)</span><br><span class="line">	// screen指的是显示器</span><br><span class="line">	console.log(&apos;pageX&apos;,e.pageX);</span><br><span class="line">	console.log(&apos;pageY&apos;,e.pageY);</span><br><span class="line">	console.log(&apos;screenX&apos;,e.screenX);</span><br><span class="line">	console.log(&apos;screenY&apos;,e.screenY);</span><br><span class="line">	console.log(&apos;clientX&apos;,e.clientX);</span><br><span class="line">	console.log(&apos;clientY&apos;,e.clientY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>onmousemove 只要鼠标在绑定该事件的事件源上移动，哪怕1像素，也会触动这个事件。（这个事件可以直接或者间接的替代定时器）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="client-家族"><a href="#client-家族" class="headerlink" title="client 家族"></a>client 家族</h2><ul>
+<li>属性<ul>
+<li><code>clientWidth</code>获取网页可视区域宽度</li>
+<li><code>clientHeight</code>获取网页可视区域高度</li>
+<li>盒子调用：指盒子本身。</li>
+<li><code>body/html</code>调用：可视区域大小(如果存在调试窗口，则显示能看到的版面的宽高)。    </li>
+<li><code>clientX</code>鼠标距离可视区域左侧距离（event调用）</li>
+<li><code>clientY</code>鼠标距离可视区域上侧距离（event调用）</li>
+<li><code>clientTop/clientLeft</code>盒子的border宽高</li>
+</ul>
+</li>
+<li>检测浏览器宽和高度，可视区域<ul>
+<li><code>document.body.clientHeight</code> (<code>document.documentElement.clientHeight</code> )  (ie和firfox都能用)</li>
+<li><code>window.innerHeight</code>  (firefox能用)</li>
+<li>推荐用innerHeight  (忽略滚动条的宽度)</li>
+<li>兼容写法：<code>var cWidth = window.innerWidth||this.clientWidth;</code></li>
+</ul>
+</li>
+<li><p>onresize 事件；沉浸式体验</p>
+<ul>
+<li>有一个像素的改变都会触发，只要浏览器的大小改变，哪怕1像素，都会触动这个事件。用于做沉浸式体验。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//根据浏览器可视区域的高度改变背景图片的高度</span><br><span class="line">var banner = document.getElementsByClassName(&apos;banner&apos;)[0];</span><br><span class="line">//初始化banner高度</span><br><span class="line">resizeBanner();</span><br><span class="line">//只要浏览器宽高发生了变化,哪怕只有1px 那么都会触发</span><br><span class="line">window.onresize = function () &#123;</span><br><span class="line">    // console.log(&apos;当前高度为: &apos;,window.innerHeight||document.documentElement.clientHeight);</span><br><span class="line">    resizeBanner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resizeBanner()&#123;</span><br><span class="line">    // banner的高度 应该和当前用户访问的客户端高度一致,满足沉浸式效果</span><br><span class="line">    var clientH = window.innerHeight||document.documentElement.clientHeight;</span><br><span class="line">    banner.style.height = clientH + &apos;px&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>阻止冒泡事件</p>
+<ul>
+<li>火狐、谷歌、IE11可用:<code>event.stopPropagation()</code></li>
+<li>IE10以下则是使用：<code>event.cancelBubble = true</code></li>
+<li><p>兼容代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var event = event || window.event;</span><br><span class="line">if(event &amp;&amp; event.stopPropagation)&#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">            event.cancelBubble = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>addEventListenner(参数1，参数2，参数3)</p>
+<ul>
+<li>调用者是：事件源。        </li>
+<li>参数1：事件去掉on;参数2 ：调用的函数;参数3：可有可无。没有默认false.false情况下，支持冒泡。True支持捕获。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件委托</p>
+<ul>
+<li>动态添加的标签没有办法直接给他绑定事件；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var ul = document.getElementsByClassName(&apos;ul&apos;)[0];</span><br><span class="line">var lis = ul.children;</span><br><span class="line">var btn1 = document.getElementsByClassName(&apos;btn1&apos;)[0];</span><br><span class="line">//这种情况无法针对&quot;未来&quot;产生的元素绑定事件,我们需要&quot;事件委托&quot;</span><br><span class="line">// for(var i = 0 ; i &lt; lis.length ; i ++)&#123;</span><br><span class="line">// 	lis[i].index = i;</span><br><span class="line">// 	lis[i].onclick = function()&#123;</span><br><span class="line">// 		alert(this.innerText);</span><br><span class="line">// 	&#125;</span><br><span class="line">// &#125;</span><br><span class="line">btn1.onclick = function()&#123;</span><br><span class="line">    var index = lis.length+1;</span><br><span class="line">    var liHtml = &apos;&lt;li class=&quot;li_&apos;+index+&apos;&quot;&gt;li_&apos;+index+&apos;&lt;/li&gt;&apos;;</span><br><span class="line">    //插入页面</span><br><span class="line">    ul.innerHTML = ul.innerHTML + liHtml;</span><br><span class="line">&#125;</span><br><span class="line">//把事件委托给ul</span><br><span class="line">ul.onclick = function(e)&#123;</span><br><span class="line">    //通过e.target可以获取真正触发事件的元素</span><br><span class="line">    var target = e.target;</span><br><span class="line">    if(target.tagName == &apos;LI&apos;)&#123;</span><br><span class="line">        alert(target.innerText);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>获取任意类型的CSS样式的属性值</p>
+<ul>
+<li><code>Div.style.width</code>    </li>
+<li><code>div.currentStyle.width</code>     IE</li>
+<li><code>Window.getComputedStyle(div,null).width;</code>    火狐</li>
+<li>他们的公共使用变量或者字符串获取属性值的方法都是：去电属性和点，然后加上中括号和属性的字符串形式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Div.style[“width”];</span><br><span class="line">div.currentStyle[“width”];</span><br><span class="line">Window.getComputedStyle(div,null)[“width”];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>回调函数</p>
+<ul>
+<li>程序执行完毕，再次执行的函数。</li>
+<li>在函数中给指定的函数定义一个形参，然后程序执行到最后，调用这个形参后面加一个括号。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function animate(el,target,fn)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">animate(d1,target,function()&#123;</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">        animate(d1,target2,function()&#123;</span><br><span class="line">            animate(d2,target2);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -467,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -504,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BOM"><span class="nav-number">1.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js组成"><span class="nav-number">1.1.</span> <span class="nav-text">js组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bom"><span class="nav-number">1.2.</span> <span class="nav-text">bom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset家族"><span class="nav-number">1.3.</span> <span class="nav-text">offset家族</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BOM"><span class="nav-number">1.</span> <span class="nav-text">BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#js组成"><span class="nav-number">1.1.</span> <span class="nav-text">js组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bom"><span class="nav-number">1.2.</span> <span class="nav-text">bom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#offset家族"><span class="nav-number">1.3.</span> <span class="nav-text">offset家族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scroll家族"><span class="nav-number">1.4.</span> <span class="nav-text">scroll家族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#event事件"><span class="nav-number">1.5.</span> <span class="nav-text">event事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#client-家族"><span class="nav-number">1.6.</span> <span class="nav-text">client 家族</span></a></li></ol></li></ol></div>
             
 
           </div>

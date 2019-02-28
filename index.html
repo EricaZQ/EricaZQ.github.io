@@ -229,6 +229,424 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/css3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erica">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端小设计">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/28/css3/" itemprop="url">css3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T15:21:20+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h1><h2 id="css私有化前缀"><a href="#css私有化前缀" class="headerlink" title="css私有化前缀"></a>css私有化前缀</h2><ul>
+<li><p>因为css3出现后 浏览器并不能统一所有针对新属性 不同的浏览器需要添加不同的前缀使其生效.(但是现在好像不太需要)</p>
+<ul>
+<li>webkit chrome浏览器内核</li>
+<li>moz  火狐</li>
+<li>ms ie内核</li>
+<li><p>o 欧朋浏览器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//圆角，radius半径</span><br><span class="line">-webkit-border-radius: 4px;</span><br><span class="line">-moz-border-radius: 4px;</span><br><span class="line">-ms-border-radius: 4px;</span><br><span class="line">-o-border-radius: 4px;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>半个椭圆写法，百度可以查到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 50% / 100% 100% 0 0;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="css3新增选择器"><a href="#css3新增选择器" class="headerlink" title="css3新增选择器"></a>css3新增选择器</h2><ul>
+<li><p>属性选择器</p>
+<ul>
+<li>其特点是通过属性来选择元素，具体有以下5种形式</li>
+<li>div[attr]</li>
+<li>div[attr=mydemo]</li>
+<li>div[attr*=mydemo]   //任意位置</li>
+<li>div[attr^=mydemo]  //开始位置</li>
+<li>div[attr$=demos]  //结束位置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	/*可以选中具有title属性的p1*/</span><br><span class="line">	/*属性选择器是补充作用,一般用[]*/</span><br><span class="line">	.p1[title=&quot;p-1&quot;]&#123;</span><br><span class="line">		color: blue;</span><br><span class="line">	&#125;</span><br><span class="line">	.p1[title]&#123;</span><br><span class="line">		font-size: 30px;</span><br><span class="line">	&#125;</span><br><span class="line">	/*title以p开始的属性*/</span><br><span class="line">	.p1[title^=&quot;p&quot;]&#123;</span><br><span class="line">		background-color: yellow;</span><br><span class="line">	&#125;</span><br><span class="line">	/*属性选择器 在表单用的多一点*/</span><br><span class="line">	input[name=&quot;age&quot;]&#123;</span><br><span class="line">		color: red;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">   &lt;body&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot; title=&quot;p-1&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;p class=&quot;p1&quot; title=&quot;p-2&quot;&gt;这是p1&lt;/p&gt;</span><br><span class="line">       &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</span><br><span class="line">       &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;</span><br><span class="line">   &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>伪类选择器</p>
+<ul>
+<li><p>结构伪类</p>
+<ul>
+<li>重点通过E来确定元素的父元素。</li>
+<li>E:first-child第一个子元素</li>
+<li>E:last-child最后一个子元素</li>
+<li>E:nth-child(n) 第n个子元素</li>
+<li>E:nth-last-child(n) 同E:nth-child(n) 相似，只是倒着计算；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//n是支持简单表达式的</span><br><span class="line">li:nth-child(2n-1)&#123;</span><br><span class="line">color: red;</span><br><span class="line">&#125;</span><br><span class="line">//n&lt;0时无效</span><br><span class="line">//选中所有的4 的倍数的li </span><br><span class="line">li:nth-child(4n)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">    &#125;</span><br><span class="line">//选中前面五个</span><br><span class="line">li:nth-child(-1n+5)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">    &#125;</span><br><span class="line">//选中后面五个</span><br><span class="line">li:nth-last-child(-1n+5)&#123;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line">//所有的偶数</span><br><span class="line">li:nth-child(even)&#123;</span><br><span class="line">    color:red</span><br><span class="line">&#125;</span><br><span class="line">//所有的奇数</span><br><span class="line">li:nth-child(odd)&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br><span class="line">//n可是多种形式：nth-child(2n)、nth-child(2n+1)、nth-child(-1n+5)等；</span><br><span class="line">//E:empty 选中没有任何子节点的E元素；注意，无法选择有空格或者回撤的标签</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>目标伪类</p>
+<ul>
+<li>E:target 结合锚点进行使用，处于当前锚点的元素会被选中；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#li3&quot;&gt;点我&lt;/a&gt;</span><br><span class="line">&lt;li id=&quot;li3&quot;&gt;li3&lt;/li&gt;</span><br><span class="line">li:target&#123;</span><br><span class="line">        font-size: 30px;</span><br><span class="line">        color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>伪元素（伪标签）选择器</p>
+<ul>
+<li>是一个行内元素，需要转换成块元素</li>
+<li>E:after、E:before 在旧版本里是伪类，在新版本里是伪元素，新版本E:after、E:before会被自动识别为E::after、E::before，按伪元素来对待，这样做的目的是用来做兼容处理。</li>
+<li>伪标签 在js中不能被选中</li>
+<li>E::first-letter文本的第一个字母或字；</li>
+<li>E::first-line 文本第一行；  文本第一行高亮..</li>
+<li>E::selection 可改变选中文本的样式；</li>
+<li><code>content`</code>伪元素多的属性可以用来添加内容，但是鼠标光标不能选中</li>
+<li><p>用于清除浮动,在这个元素after写上<code>clear:both;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.clear::after&#123;</span><br><span class="line">    content:&apos;&apos;;</span><br><span class="line">    /*转换为块状元素*/</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">    height:0;</span><br><span class="line">    overflow:hidden;</span><br><span class="line">    visibility:hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>僚机，这个元素的after和before，可以加样式和动画。</p>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2></li>
+</ul>
+</li>
+<li>一种新增的颜色表达方式</li>
+<li>Red、Green、Blue、Alpha（透明度）即RGBA</li>
+<li>Hue（色调）、Saturation（饱和度）、Lightness（亮度）、Alpha（透明度）即HSLA</li>
+<li>关于透明度<ul>
+<li>opacity只能针对整个盒子设置透明度，子盒子及内容会继承父盒子的透明度；</li>
+<li>transparent 不可调节透明度，始终完全透明；</li>
+<li>什么时候用<ul>
+<li>一般元素透明用opacity</li>
+<li>遮罩层rgba背景透明</li>
+<li>制作三角的时候用transparent</li>
+</ul>
+</li>
+<li>制作三角形:写一个元素给他加上很宽的边框，然后让元素的长宽为0，就只剩边框了，让其中三个边框变透明就成了三角形了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  .an&#123;</span><br><span class="line">      width: 0px;</span><br><span class="line">      height: 0px;</span><br><span class="line">      /*background-color: pink;*/</span><br><span class="line">      margin: 100px;</span><br><span class="line">      border: 90px solid transparent;</span><br><span class="line">      /*border-right-color: green;*/</span><br><span class="line">      border-bottom-color: yellow;</span><br><span class="line">      /*border-left-color: purple;*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><ul>
+<li><p>文本：text-shadow，可分别设置偏移量、模糊度、颜色（可设透明度）。</p>
+<ul>
+<li>水平偏移量 正值向右 负值向左；</li>
+<li>垂直偏移量 正值向下 负值向上；</li>
+<li>模糊度是不能为负值；</li>
+<li>可以有多个影子，用逗号隔开</li>
+<li>案例：浮雕文字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.tu&#123;</span><br><span class="line">  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;</span><br><span class="line">&#125;</span><br><span class="line">.ao&#123;</span><br><span class="line">    text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>盒子：box-shadow</p>
+<ul>
+<li>blur： 模糊半径</li>
+<li>spread:  扩展范围</li>
+<li>color: 颜色</li>
+<li>案例：扔在桌子上的图片<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.pic&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    margin-left: 100px;</span><br><span class="line">    border: 30px solid #e5e5e5;</span><br><span class="line">    transform: rotate(30deg);</span><br><span class="line">    box-shadow: 0 40px 30px -20px rgba(0,0,0,.5);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;img class=&quot;pic&quot; src=&quot;m1.jpg&quot; alt=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>用box-sizing 来指定盒模型，他有两个属性，content-box、border-box。</li>
+<li>content-box:对象的实际宽度等于设置的width值和border、padding之和</li>
+<li>border-box： 对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element width = width ) 。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/html5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erica">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端小设计">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/28/html5/" itemprop="url">html5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T15:21:20+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h4 id="一些不常用的功能详见word文档内容"><a href="#一些不常用的功能详见word文档内容" class="headerlink" title="一些不常用的功能详见word文档内容"></a>一些不常用的功能详见word文档内容</h4><h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><ul>
+<li>输入类型<ul>
+<li>email 输入email格式</li>
+<li>tel 手机号码  </li>
+<li>url 只能输入url格式</li>
+<li>number 只能输入数字</li>
+<li>search 搜索框</li>
+<li>range 范围 滑动条</li>
+<li>color 拾色器</li>
+<li>time    时间</li>
+<li>date 日期 不是绝对的</li>
+<li>–datetime 时间日期(移动支持)</li>
+<li>month 月份</li>
+<li>week 星期<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;&quot;&gt;</span><br><span class="line">    用户名: &lt;input type=&quot;text&quot; name=&quot;username&quot; autocomplete=&quot;off&quot;&gt;</span><br><span class="line">    邮箱:&lt;input autofocus type=&quot;email&quot;&gt;</span><br><span class="line">    手机:&lt;input type=&quot;tel&quot;&gt;</span><br><span class="line">    网址:&lt;input type=&quot;url&quot;&gt;</span><br><span class="line">    年龄:&lt;input type=&quot;number&quot;&gt;</span><br><span class="line">    搜索:&lt;input type=&quot;search&quot;&gt;</span><br><span class="line">    范围::&lt;input type=&quot;range&quot;&gt;</span><br><span class="line">    肤色:&lt;input type=&quot;color&quot;&gt;</span><br><span class="line">    生日: &lt;input type=&quot;date&quot;&gt;</span><br><span class="line">    性别: &lt;input type=&quot;text&quot; list=&quot;data&quot;&gt;</span><br><span class="line">        &lt;datalist id=&quot;data&quot;&gt;</span><br><span class="line">            &lt;option&gt;男&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;女&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;不详&lt;/option&gt; </span><br><span class="line">    &lt;/datalist&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
+<li><p>音频播放</p>
+<ul>
+<li>HTML5通过<code>&lt;audio&gt;</code>标签来解决音频播放的问题。</li>
+<li>并且可以通过附加属性可以更友好控制音频的播放，如：<ul>
+<li>autoplay 自动播放</li>
+<li>controls 是否显不默认播放控件</li>
+<li>loop 循环播放</li>
+<li>preload 预加载 同时设置autoplay时此属性失效</li>
+<li>有的音频格式不支持<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src=&quot;music/小手拍拍.mp3&quot; preload loop controls&gt;不支持&lt;/audio&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>视频播放</p>
+<ul>
+<li>HTML5通过<code>&lt;video&gt;</code>标签来解决音频播放的问题。</li>
+<li>同样，通过附加属性可以更友好的控制视频的播放<ul>
+<li>autoplay 自动播放</li>
+<li>controls 是否显示默认播放控件</li>
+<li>loop 循环播放</li>
+<li>preload 预加载，同时设置了autoplay，此属性将失效</li>
+<li>width 设置播放窗口宽度</li>
+<li>height 设置播放窗口的高度</li>
+<li>但是有的视频格式不支持<h2 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>获取元素</p>
+<ul>
+<li><code>document.querySelector(‘div’)</code>html5新选择器，参数是css选择器参数,选择选中的第一个</li>
+<li><code>document.querySelectorAll(&#39;selector&#39;)</code>  选择多个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 使用css选择器即可</span><br><span class="line">var d1_1 = document.querySelector(&apos;.box .d1&apos;);</span><br><span class="line">// 返回集合</span><br><span class="line">var lis = document.querySelectorAll(&apos;.ul .li-item&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>类名操作</p>
+<ul>
+<li>Node.classList.add(‘class’) 添加class</li>
+<li>Node.classList.remove(‘class’) 移除class</li>
+<li>Node.classList.toggle(‘class’) 切换class，有则移除，无则添加</li>
+<li>Node.classList.contains(‘class’) 检测是否存在class<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">   &lt;h2 class=&quot;title&quot;&gt;欢迎来到不凡学院!&lt;/h2&gt;</span><br><span class="line">&lt;button class=&quot;btn1&quot;&gt;添加红色&lt;/button&gt;</span><br><span class="line">&lt;button class=&quot;btn2&quot;&gt;删除红色&lt;/button&gt;</span><br><span class="line">&lt;button class=&quot;btn3&quot;&gt;变为斜体&lt;/button&gt;</span><br><span class="line">&lt;button class=&quot;btn4&quot;&gt;恢复正常&lt;/button&gt;</span><br><span class="line">&lt;button class=&quot;btn5&quot;&gt;toggle颜色&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var h2 = document.querySelector(&apos;h2&apos;);</span><br><span class="line">	var btn1 = document.querySelector(&apos;.btn1&apos;);</span><br><span class="line">	var btn2 = document.querySelector(&apos;.btn2&apos;);</span><br><span class="line">	var btn3 = document.querySelector(&apos;.btn3&apos;);</span><br><span class="line">	var btn4 = document.querySelector(&apos;.btn4&apos;);</span><br><span class="line">	var btn5 = document.querySelector(&apos;.btn5&apos;);</span><br><span class="line"></span><br><span class="line">	// 1、Node.classList.add(&apos;class&apos;) 添加class</span><br><span class="line">	// 2、Node.classList.remove(&apos;class&apos;) 移除class</span><br><span class="line">	// 3、Node.classList.toggle(&apos;class&apos;) 切换class，有则移除，无则添加</span><br><span class="line">	// 4、Node.classList.contains(&apos;class&apos;) 检测是否存在class</span><br><span class="line"></span><br><span class="line">	btn1.onclick = function()&#123;</span><br><span class="line">		h2.classList.add(&apos;danger&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	btn2.onclick = function()&#123;</span><br><span class="line">		h2.classList.remove(&apos;danger&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	btn5.onclick = function()&#123;</span><br><span class="line">		console.log(h2.classList.contains(&apos;danger&apos;));</span><br><span class="line">		h2.classList.toggle(&apos;danger&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>自定义属性</p>
+<ul>
+<li>在HTML5中我们可以自定义属性，其格式如下data-*=””，例如：</li>
+<li>data-info=”我是自定义属性”，通过<code>Node.dataset[&#39;info&#39;]</code> 我们便可以获取到自定义的属性值。</li>
+<li><code>Node.dataset</code>是以类对象形式存在的</li>
+<li>当我们如下格式设置时，则需要以驼峰格式才能正确获取<br><code>data-my-name=&quot;mm&quot;</code>，获取<code>Node.dataset[&#39;myName&#39;]</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- data-xx 形式可以在标签内部追加不同的内容  --&gt;</span><br><span class="line">    &lt;button data-color=&quot;blue&quot; data-text=&quot;今天郑州天气晴朗万里无云&quot; class=&quot;btn news&quot;&gt;新闻&lt;/button&gt;</span><br><span class="line">    &lt;button data-color=&quot;pink&quot; data-text=&quot;今天詹姆斯得了世界杯冠军&quot; class=&quot;btn sports&quot;&gt;体育&lt;/button&gt;</span><br><span class="line">    &lt;button data-color=&quot;yellow&quot; data-text=&quot;今天金正恩去越南开心&quot; class=&quot;btn pol&quot;&gt;政治&lt;/button&gt;</span><br><span class="line">    &lt;p class=&quot;content&quot;&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var news = document.querySelector(&apos;.news&apos;);</span><br><span class="line">        var stports = document.querySelector(&apos;.sports&apos;);</span><br><span class="line">        var pol = document.querySelector(&apos;.pol&apos;);</span><br><span class="line">        var btns = document.querySelectorAll(&apos;.btn&apos;);</span><br><span class="line">        var target = document.querySelector(&apos;.content&apos;)</span><br><span class="line">        for(var i = 0 ; i &lt; btns.length ; i ++)&#123;</span><br><span class="line">            btns[i].onclick = function () &#123;</span><br><span class="line">                console.log(this)</span><br><span class="line">                //可以通过标签对象.dataset获取自定义属性的值</span><br><span class="line">                target.style.backgroundColor = this.dataset.color;</span><br><span class="line">                target.innerText = this.dataset.text;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/21/readme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1235,14 +1653,14 @@ overflow: hidden;</code><h2 id="十、css特性"><a href="#十、css特性" clas
 </li>
 <li>offset这个单词本身是偏移，位移的意思。</li>
 <li>在js中是为了方便获取元素尺寸。</li>
-<li><p>offsetWidth和ffsetHeight</p>
+<li><p><code>offsetWidth和ffsetHeight</code></p>
 <ul>
 <li>检测盒子自身宽高，包括边框和padding</li>
 <li>得到的结果是number类型，可以直接参与运算<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">console.log(&apos;d1.offsetWidth===&gt;&apos;,d1.offsetWidth);</span><br><span class="line">console.log(&apos;d1.offsetHeight===&gt;&apos;,d1.offsetHeight);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>offsetLeft和offsetTop</p>
+<li><p><code>offsetLeft和offsetTop</code></p>
 <ul>
 <li>检测距离父盒子有定位的左/上的距离。</li>
 <li>如果父类没有定位，就一直往上找，找到有定位的父类元素为止。如果所有的父类都没有定位。那么指的是距离body边框的距离</li>
@@ -1250,7 +1668,7 @@ overflow: hidden;</code><h2 id="十、css特性"><a href="#十、css特性" clas
 </li>
 </ul>
 </li>
-<li><p>offsetParent</p>
+<li><p><code>offsetParent</code></p>
 <ul>
 <li>检测父系盒子中带有定位的父盒子节点</li>
 <li>如果父类没有定位，就一直往上找，找到有定位的父类元素为止。如果所有的父类都没有定位。那么offsetParent为body。</li>
@@ -1266,6 +1684,132 @@ overflow: hidden;</code><h2 id="十、css特性"><a href="#十、css特性" clas
 <li>style获取的结果是css样式,单位带px,而offsetwidth获取的是number类型</li>
 <li>offsetWidth 只能获取整数值</li>
 <li>通过对象修改属性<code>this.style.width = &#39;400px&#39;;</code>这是给这个节点加上行内样式，将他的css覆盖掉了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">console.log(d1.style.width);</span><br><span class="line">console.log(d1.offsetWidth);</span><br><span class="line">d1.onclick = function()&#123;</span><br><span class="line">    //通过对象修改属性</span><br><span class="line">    this.style.width = &apos;400px&apos;;</span><br><span class="line">    // offsetWidth 是只读属性 只能获取不能设值</span><br><span class="line">    this.offsetWidth  = 400;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="scroll家族"><a href="#scroll家族" class="headerlink" title="scroll家族"></a>scroll家族</h2><ul>
+<li><code>scrollWidth</code>和<code>scroHeight</code><ul>
+<li>检测盒子的宽高。（调用者：节点元素。属性。）</li>
+<li>盒子内容的宽高。（如果有内容超出了，显示内容的高度）</li>
+<li>和offset不同，scroll不包含border，但是包含padding。</li>
+</ul>
+</li>
+<li><p><code>scrollTop</code>和<code>scrollLeft</code></p>
+<ul>
+<li>网页，被浏览器遮挡的头部和左边部分。</li>
+<li>被卷去的头部和左边部分。</li>
+</ul>
+</li>
+<li><p>页面被卷进去的高度</p>
+<ul>
+<li><p><code>document.documentElement.scrollTop</code>已经声明DTD（IE678只认识他）</p>
+<ul>
+<li><code>Element.scrollTop</code> 属性可以获取或设置一个元素的内容垂直滚动的像素数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop =intvalue</span><br><span class="line">window.scrollTo(x,y);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>window.pageYOffset</code>火狐/谷歌/ie9+以上支持的</p>
+</li>
+</ul>
+</li>
+<li><p>监听浏览器的滚动事件，实时监听页面滚进去的高度,只要页面滚动无论向左向右，向上向下，哪怕只有1px，都会触动这个事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      window.onscroll = function()&#123;</span><br><span class="line">	console.log(document.documentElement.scrollTop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>骨架标签</p>
+<ul>
+<li>document.title — 文档标题；</li>
+<li>document.head — 文档的头标签</li>
+<li>document.body — 文档的body标签；</li>
+<li>document.documentElement — html<h2 id="event事件"><a href="#event事件" class="headerlink" title="event事件"></a>event事件</h2></li>
+</ul>
+</li>
+<li><p>事件对象（event）</p>
+<ul>
+<li>在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。所有浏览器都支持event对象，但支持的方式不同。比如鼠标操作时候，会添加鼠标位置的相关信息到事件对象中。</li>
+<li>普通浏览器支持 event（带参，任意参数）</li>
+<li>ie 678 支持 window.event（无参，内置）</li>
+<li>总结：他是一个事件中的内置对象。内部装了很多关于鼠标和事件本身的信息。</li>
+</ul>
+</li>
+<li><p>事件对象的获取（event的获取）</p>
+<ul>
+<li>IE678中，window.event </li>
+<li>在火狐谷歌中，event或者，在事件绑定的函数中，加参，这个参数就是event.</li>
+<li>兼容方式  <code>var event = event||window.event;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  //ie8</span><br><span class="line">  d1.onclick = function()&#123;</span><br><span class="line">      var event = window.event;</span><br><span class="line">      alert(document.documentElement.scrollTop+event.clientY);</span><br><span class="line">  &#125;</span><br><span class="line">  //高级浏览器</span><br><span class="line">  //e就是event对象</span><br><span class="line">d1.onclick = function(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">	console.log(&apos;clientY&apos;,e.clientY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>event属性</p>
+<ul>
+<li>screenX/Y:鼠标位于屏幕的上方和左侧的距离。（屏幕）</li>
+<li>pageX/Y:鼠标位于整个网页页面的顶部和左侧部分的距离。（页面）</li>
+<li><p>clientX/Y:鼠标位于浏览器的左侧和顶部的距离。（浏览器大小和位置）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  var d1 = document.getElementsByClassName(&apos;d1&apos;)[0];</span><br><span class="line">//e就是event对象</span><br><span class="line">d1.onclick = function(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">	// page指的是页面本身</span><br><span class="line">	// client指的是浏览器客户端(不包含top的工具栏)</span><br><span class="line">	// screen指的是显示器</span><br><span class="line">	console.log(&apos;pageX&apos;,e.pageX);</span><br><span class="line">	console.log(&apos;pageY&apos;,e.pageY);</span><br><span class="line">	console.log(&apos;screenX&apos;,e.screenX);</span><br><span class="line">	console.log(&apos;screenY&apos;,e.screenY);</span><br><span class="line">	console.log(&apos;clientX&apos;,e.clientX);</span><br><span class="line">	console.log(&apos;clientY&apos;,e.clientY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>onmousemove 只要鼠标在绑定该事件的事件源上移动，哪怕1像素，也会触动这个事件。（这个事件可以直接或者间接的替代定时器）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="client-家族"><a href="#client-家族" class="headerlink" title="client 家族"></a>client 家族</h2><ul>
+<li>属性<ul>
+<li><code>clientWidth</code>获取网页可视区域宽度</li>
+<li><code>clientHeight</code>获取网页可视区域高度</li>
+<li>盒子调用：指盒子本身。</li>
+<li><code>body/html</code>调用：可视区域大小(如果存在调试窗口，则显示能看到的版面的宽高)。    </li>
+<li><code>clientX</code>鼠标距离可视区域左侧距离（event调用）</li>
+<li><code>clientY</code>鼠标距离可视区域上侧距离（event调用）</li>
+<li><code>clientTop/clientLeft</code>盒子的border宽高</li>
+</ul>
+</li>
+<li>检测浏览器宽和高度，可视区域<ul>
+<li><code>document.body.clientHeight</code> (<code>document.documentElement.clientHeight</code> )  (ie和firfox都能用)</li>
+<li><code>window.innerHeight</code>  (firefox能用)</li>
+<li>推荐用innerHeight  (忽略滚动条的宽度)</li>
+<li>兼容写法：<code>var cWidth = window.innerWidth||this.clientWidth;</code></li>
+</ul>
+</li>
+<li><p>onresize 事件；沉浸式体验</p>
+<ul>
+<li>有一个像素的改变都会触发，只要浏览器的大小改变，哪怕1像素，都会触动这个事件。用于做沉浸式体验。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//根据浏览器可视区域的高度改变背景图片的高度</span><br><span class="line">var banner = document.getElementsByClassName(&apos;banner&apos;)[0];</span><br><span class="line">//初始化banner高度</span><br><span class="line">resizeBanner();</span><br><span class="line">//只要浏览器宽高发生了变化,哪怕只有1px 那么都会触发</span><br><span class="line">window.onresize = function () &#123;</span><br><span class="line">    // console.log(&apos;当前高度为: &apos;,window.innerHeight||document.documentElement.clientHeight);</span><br><span class="line">    resizeBanner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function resizeBanner()&#123;</span><br><span class="line">    // banner的高度 应该和当前用户访问的客户端高度一致,满足沉浸式效果</span><br><span class="line">    var clientH = window.innerHeight||document.documentElement.clientHeight;</span><br><span class="line">    banner.style.height = clientH + &apos;px&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>阻止冒泡事件</p>
+<ul>
+<li>火狐、谷歌、IE11可用:<code>event.stopPropagation()</code></li>
+<li>IE10以下则是使用：<code>event.cancelBubble = true</code></li>
+<li><p>兼容代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var event = event || window.event;</span><br><span class="line">if(event &amp;&amp; event.stopPropagation)&#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">            event.cancelBubble = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>addEventListenner(参数1，参数2，参数3)</p>
+<ul>
+<li>调用者是：事件源。        </li>
+<li>参数1：事件去掉on;参数2 ：调用的函数;参数3：可有可无。没有默认false.false情况下，支持冒泡。True支持捕获。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件委托</p>
+<ul>
+<li>动态添加的标签没有办法直接给他绑定事件；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var ul = document.getElementsByClassName(&apos;ul&apos;)[0];</span><br><span class="line">var lis = ul.children;</span><br><span class="line">var btn1 = document.getElementsByClassName(&apos;btn1&apos;)[0];</span><br><span class="line">//这种情况无法针对&quot;未来&quot;产生的元素绑定事件,我们需要&quot;事件委托&quot;</span><br><span class="line">// for(var i = 0 ; i &lt; lis.length ; i ++)&#123;</span><br><span class="line">// 	lis[i].index = i;</span><br><span class="line">// 	lis[i].onclick = function()&#123;</span><br><span class="line">// 		alert(this.innerText);</span><br><span class="line">// 	&#125;</span><br><span class="line">// &#125;</span><br><span class="line">btn1.onclick = function()&#123;</span><br><span class="line">    var index = lis.length+1;</span><br><span class="line">    var liHtml = &apos;&lt;li class=&quot;li_&apos;+index+&apos;&quot;&gt;li_&apos;+index+&apos;&lt;/li&gt;&apos;;</span><br><span class="line">    //插入页面</span><br><span class="line">    ul.innerHTML = ul.innerHTML + liHtml;</span><br><span class="line">&#125;</span><br><span class="line">//把事件委托给ul</span><br><span class="line">ul.onclick = function(e)&#123;</span><br><span class="line">    //通过e.target可以获取真正触发事件的元素</span><br><span class="line">    var target = e.target;</span><br><span class="line">    if(target.tagName == &apos;LI&apos;)&#123;</span><br><span class="line">        alert(target.innerText);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>获取任意类型的CSS样式的属性值</p>
+<ul>
+<li><code>Div.style.width</code>    </li>
+<li><code>div.currentStyle.width</code>     IE</li>
+<li><code>Window.getComputedStyle(div,null).width;</code>    火狐</li>
+<li>他们的公共使用变量或者字符串获取属性值的方法都是：去电属性和点，然后加上中括号和属性的字符串形式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Div.style[“width”];</span><br><span class="line">div.currentStyle[“width”];</span><br><span class="line">Window.getComputedStyle(div,null)[“width”];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>回调函数</p>
+<ul>
+<li>程序执行完毕，再次执行的函数。</li>
+<li>在函数中给指定的函数定义一个形参，然后程序执行到最后，调用这个形参后面加一个括号。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function animate(el,target,fn)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">animate(d1,target,function()&#123;</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">        animate(d1,target2,function()&#123;</span><br><span class="line">            animate(d2,target2);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1639,7 +2183,7 @@ overflow: hidden;</code><h2 id="十、css特性"><a href="#十、css特性" clas
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
